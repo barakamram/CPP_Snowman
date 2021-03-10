@@ -23,32 +23,31 @@ TEST_CASE("Good snowman code") {
     CHECK(nospaces(snowman(23113221)) == nospaces(" ___ \n.....\n(._.)/\n/(] [)\n( : )"));
     CHECK(nospaces(snowman(33233114)) == nospaces("  _  \n /_\\ \n(o_O)\n/( : )>\n(   )"));
     CHECK(nospaces(snowman(44342332)) == nospaces(" ___ \n(_*_)\n \\(O -)\n(> <)\\ \n(" ")"));
-
 }
 
-TEST_CASE("Bad snowman code") {
-    
-    /* Illegal digits */
+TEST_CASE("Illegal digits") {
     CHECK_THROWS(snowman(81));
     CHECK_THROWS(snowman(3537));
     CHECK_THROWS(snowman(748216));
     CHECK_THROWS(snowman(11223345));
     CHECK_THROWS(snowman(22211634));
     CHECK_THROWS(snowman(11111119));
+}
 
-    /* Lower then 8 digits */
+TEST_CASE("Lower then 8 digits") {
     CHECK_THROWS(snowman(123));
     CHECK_THROWS(snowman(4321));
     CHECK_THROWS(snowman(21212));
     CHECK_THROWS(snowman(321123));
+}
 
-    /* Higher then 8 digits */
+TEST_CASE("Higher then 8 digits") {
     CHECK_THROWS(snowman(123123123));
     CHECK_THROWS(snowman(432121234));
     CHECK_THROWS(snowman(111121111));
+}
 
-
-    /* Negative digits */
+TEST_CASE("Negative digits") {
     CHECK_THROWS(snowman(-1214));
     CHECK_THROWS(snowman(-423411));
     CHECK_THROWS(snowman(-14222412));
