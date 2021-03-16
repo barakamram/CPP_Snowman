@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
 namespace ariel {
-   std::string snowman(int input);
+   string snowman(int input);
 }
